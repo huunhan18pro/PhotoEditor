@@ -203,7 +203,7 @@ class EditImageActivity : BaseActivity(), OnPhotoEditorListener, View.OnClickLis
         )
     }
 
-    override fun onRemoveViewListener(viewType: ViewType, numberOfAddedViews: Int) {
+    override fun onRemoveViewListener(viewType: ViewType, numberOfAddedViews: Int, viewId: String?) {
         Log.d(
             TAG,
             "onRemoveViewListener() called with: viewType = [$viewType], numberOfAddedViews = [$numberOfAddedViews]"
