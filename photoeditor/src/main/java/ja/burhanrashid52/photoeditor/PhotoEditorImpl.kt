@@ -90,7 +90,8 @@ internal class PhotoEditorImpl @SuppressLint("ClickableViewAccessibility") const
             multiTouchListener,
             viewState,
             mDefaultTextTypeface,
-            mGraphicManager
+            mGraphicManager,
+            viewId
         )
         viewId?.let { textGraphic?.viewId = viewId }
         textGraphic.buildView(text, styleBuilder)

@@ -15,10 +15,10 @@ internal abstract class Graphic(
     val context: Context,
     val layoutId: Int,
     val viewType: ViewType,
-    val graphicManager: GraphicManager?) {
+    val graphicManager: GraphicManager?,
+    var viewId: String? = null) {
 
     val rootView: View
-    var viewId: String? = null
 
     open fun updateView(view: View) {
         //Optional for subclass to override
@@ -38,6 +38,7 @@ internal abstract class Graphic(
         //We are setting tag as ViewType to identify what type of the view it is
         //when we remove the view from stack i.e onRemoveViewListener(ViewType viewType, int numberOfAddedViews);
         rootView.tag = viewType
+        viewId?.let {  rootView.setTag(R.id.view_id, viewId) }
         val imgClose = rootView.findViewById<ImageView>(R.id.imgPhotoEditorClose)
         imgClose?.setOnClickListener { graphicManager?.removeView(this@Graphic) }
     }

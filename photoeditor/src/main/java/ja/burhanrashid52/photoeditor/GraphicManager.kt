@@ -67,7 +67,8 @@ internal class GraphicManager(
             when (val viewTag = removeView.tag) {
                 is ViewType -> onPhotoEditorListener?.onRemoveViewListener(
                     viewTag,
-                    mViewState.addedViewsCount
+                    mViewState.addedViewsCount,
+                    "${removeView.getTag(R.id.view_id)}"
                 )
             }
         }

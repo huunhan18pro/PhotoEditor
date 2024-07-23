@@ -15,12 +15,14 @@ internal class Text(
     private val mMultiTouchListener: MultiTouchListener,
     private val mViewState: PhotoEditorViewState,
     private val mDefaultTextTypeface: Typeface?,
-    private val mGraphicManager: GraphicManager
+    private val mGraphicManager: GraphicManager,
+    private val mViewId: String? = null
 ) : Graphic(
     context = mPhotoEditorView.context,
     graphicManager = mGraphicManager,
     viewType = ViewType.TEXT,
-    layoutId = R.layout.view_photo_editor_text
+    layoutId = R.layout.view_photo_editor_text,
+    viewId = mViewId
 ) {
 
     private var mTextView: TextView? = null
