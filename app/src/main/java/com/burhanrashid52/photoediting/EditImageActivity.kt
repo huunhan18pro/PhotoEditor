@@ -205,7 +205,7 @@ class EditImageActivity : BaseActivity(), OnPhotoEditorListener, View.OnClickLis
         )
     }
 
-    override fun onRemoveViewListener(viewType: ViewType, numberOfAddedViews: Int, id: Int?) {
+    override fun onRemoveViewListener(viewType: ViewType, numberOfAddedViews: Int, id: String?) {
         Log.d(
             TAG,
             "onRemoveViewListener() called with: viewType = [$viewType], numberOfAddedViews = [$numberOfAddedViews], id = [$id]"
@@ -414,7 +414,7 @@ class EditImageActivity : BaseActivity(), OnPhotoEditorListener, View.OnClickLis
                     override fun onDone(inputText: String, colorCode: Int) {
                         val styleBuilder = TextStyleBuilder()
                         styleBuilder.withTextColor(colorCode)
-                        mPhotoEditor.addText(inputText, styleBuilder, System.currentTimeMillis().toInt())
+                        mPhotoEditor.addText(inputText, styleBuilder, UUID.randomUUID().toString())
                         mTxtCurrentTool.setText(R.string.label_text)
                     }
                 })

@@ -18,7 +18,7 @@ internal abstract class Graphic(
     val graphicManager: GraphicManager?) {
 
     val rootView: View
-    var id: Int? = null
+    var id: String? = null
 
     open fun updateView(view: View) {
         //Optional for subclass to override

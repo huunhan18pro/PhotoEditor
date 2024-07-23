@@ -82,7 +82,7 @@ internal class PhotoEditorImpl @SuppressLint("ClickableViewAccessibility") const
         addToEditor(textGraphic)
     }
 
-    override fun addText(text: String, styleBuilder: TextStyleBuilder?, id: Int?) {
+    override fun addText(text: String, styleBuilder: TextStyleBuilder?, id: String?) {
         drawingView?.enableDrawing(false)
         val multiTouchListener = getMultiTouchListener(isTextPinchScalable)
         val textGraphic = Text(

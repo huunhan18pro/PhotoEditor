@@ -66,7 +66,7 @@ interface PhotoEditor {
      * @param id to identify which item is deleted
      */
     @SuppressLint("ClickableViewAccessibility")
-    fun addText(text: String, styleBuilder: TextStyleBuilder?, id: Int? = null)
+    fun addText(text: String, styleBuilder: TextStyleBuilder?, id: String? = null)
 
     /**
      * This will update text and color on provided view
