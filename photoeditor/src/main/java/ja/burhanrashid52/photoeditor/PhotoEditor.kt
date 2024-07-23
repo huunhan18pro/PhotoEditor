@@ -58,6 +58,17 @@ interface PhotoEditor {
     fun addText(text: String, styleBuilder: TextStyleBuilder?)
 
     /**
+     * This add the text on the [PhotoEditorView] with provided parameters
+     * by default [TextView.setText] will be 18sp
+     *
+     * @param text         text to display
+     * @param styleBuilder text style builder with your style
+     * @param id to identify which item is deleted
+     */
+    @SuppressLint("ClickableViewAccessibility")
+    fun addText(text: String, styleBuilder: TextStyleBuilder?, id: Int? = null)
+
+    /**
      * This will update text and color on provided view
      *
      * @param view      view on which you want update

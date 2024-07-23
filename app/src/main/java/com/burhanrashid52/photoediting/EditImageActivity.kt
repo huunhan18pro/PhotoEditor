@@ -50,6 +50,8 @@ import ja.burhanrashid52.photoeditor.shape.ShapeType
 import kotlinx.coroutines.launch
 import java.io.File
 import java.io.IOException
+import java.util.UUID
+import kotlin.random.Random
 
 class EditImageActivity : BaseActivity(), OnPhotoEditorListener, View.OnClickListener,
     PropertiesBSFragment.Properties, ShapeBSFragment.Properties, EmojiListener, StickerListener,
@@ -203,10 +205,10 @@ class EditImageActivity : BaseActivity(), OnPhotoEditorListener, View.OnClickLis
         )
     }
 
-    override fun onRemoveViewListener(viewType: ViewType, numberOfAddedViews: Int) {
+    override fun onRemoveViewListener(viewType: ViewType, numberOfAddedViews: Int, id: Int?) {
         Log.d(
             TAG,
-            "onRemoveViewListener() called with: viewType = [$viewType], numberOfAddedViews = [$numberOfAddedViews]"
+            "onRemoveViewListener() called with: viewType = [$viewType], numberOfAddedViews = [$numberOfAddedViews], id = [$id]"
         )
     }
 
@@ -412,7 +414,7 @@ class EditImageActivity : BaseActivity(), OnPhotoEditorListener, View.OnClickLis
                     override fun onDone(inputText: String, colorCode: Int) {
                         val styleBuilder = TextStyleBuilder()
                         styleBuilder.withTextColor(colorCode)
-                        mPhotoEditor.addText(inputText, styleBuilder)
+                        mPhotoEditor.addText(inputText, styleBuilder, System.currentTimeMillis().toInt())
                         mTxtCurrentTool.setText(R.string.label_text)
                     }
                 })
